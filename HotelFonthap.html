@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Student Name in Blockchain Class</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <script src="./node_modules/web3/dist/web3.min.js">
+    </script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+<style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+</style>
+
+<body>
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>Fonthap Hotel</h1>
+            <p>Hotel Deals and Events</p>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#">Stores</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Classic Room</div>
+                    <div class="panel-body"><img src="./pic/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg" class="img-responsive" 
+                            style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">
+                        <p>Benefits :Free breakfast for 1
+                            Parking, Coffee & tea, Express check-in, Free Premium Wifi, Free WiFi, Drinking water   
+                            <br/>Price per night : 0.001 ETH
+                        </p>
+                        <button class="w3-button w3-block w3-green" id="btnRegistrationRoom1">Reserve</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Superieur Room</div>
+                    <div class="panel-body"><img src="./pic/mark-champs-Id2IIl1jOB0-unsplash.jpg" class="img-responsive" 
+                            style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">
+                        <p>Benefits :Free breakfast for 2
+                            Parking, Coffee & tea, Express check-in, Free Premium Wifi, Free WiFi, Drinking water   
+                            <br/>Price per night : 0.002 ETH
+                        </p>
+                        <button class="w3-button w3-block w3-green" id="btnRegistrationRoom2">Reserve</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Grande Room</div>
+                    <div class="panel-body"><img src="./pic/ralph-ravi-kayden-FqqiAvJejto-unsplash.jpg" class="img-responsive"
+                            style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">
+                        <p>Benefits :Free breakfast for 2
+                            Parking, Coffee & tea, Express check-in, Free Premium Wifi, Free WiFi, Drinking water   
+                            <br/>Price per night : 0.003 ETH
+                        </p>
+                        <button class="w3-button w3-block w3-green" id="btnRegistrationRoom3">Reserve</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Salon Room</div>
+                    <div class="panel-body"><img src="./pic/ralph-ravi-kayden-mdwOo5PeXpE-unsplash.jpg" class="img-responsive"
+                            style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">
+                        <p>Benefits :Free breakfast for 2
+                            Parking, Coffee & tea, Express check-in, Free Premium Wifi, Free WiFi, Drinking water   
+                            <br/>Price per night : 0.004 ETH
+                        </p>
+                        <button class="w3-button w3-block w3-green" id="btnRegistrationRoom4">Reserve</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Grand Double Room</div>
+                    <div class="panel-body"><img src="./pic/iwood-R5v8Xtc0ecg-unsplash.jpg" class="img-responsive"
+                            style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">
+                        <p>Benefits :Free breakfast for 2
+                            Parking, Coffee & tea, Express check-in, Free Premium Wifi, Free WiFi, Drinking water   
+                            <br/>Price per night : 0.005 ETH
+                        </p>
+                        <button class="w3-button w3-block w3-green" id="btnRegistrationRoom5">Reserve</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Family Room</div>
+                    <div class="panel-body"><img src="./pic/khach-s-n-tinh-nhan-venice-1-hotel-FL2cq-GgnWQ-unsplash.jpg" class="img-responsive"
+                            style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">
+                        <p>Benefits :Free breakfast for 4
+                            Parking, Coffee & tea, Express check-in, Free Premium Wifi, Free WiFi, Drinking water   
+                            <br/>Price per night : 0.006 ETH
+                        </p>
+                        <button class="w3-button w3-block w3-green" id="btnRegistrationRoom6">Reserve</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <div class="container">
+        <table id="vouchertable">
+                <tr>
+                    <th>Date and Time</th>
+                    <th>Name Room</th>
+                    <th>Voucher</th>
+                    <th>Owener</th>
+                </tr>
+
+        </table>
+    </div>
+    </div><br><br>
+    <footer class="container-fluid text-center">
+        <p>Online Hotel Copyright</p>
+        <form class="form-inline">Get deals:
+            <input type="email" class="form-control" size="50" placeholder="Email Address">
+            <button type="button" class="btn btn-danger">Sign Up</button>
+        </form>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+    </script>
+    <script>
+
+        async function loadWeb3() {
+            if (window.ethereum) {
+                window.web3 = new Web3(window.ethereum);
+                window.ethereum.enable();
+            }
+        }
+
+        let currentAccount = null;
+        window.ethereum
+            .request({ method: 'eth_accounts' })
+            .then(handleAccountsChanged)
+            .catch((err) => {
+                // Some unexpected error.
+                // For backwards compatibility reasons, if no accounts are available,
+                // eth_accounts will return an empty array.
+                console.error(err);
+            });
+
+        // Note that this event is emitted on page load.
+        // If the array of accounts is non-empty, you're already
+        // connected.
+        window.ethereum.on('accountsChanged', handleAccountsChanged);
+
+        // For now, 'eth_accounts' will continue to always return an array
+        function handleAccountsChanged(accounts) {
+            if (accounts.length === 0) {
+                // MetaMask is locked or the user has not connected any accounts
+                console.log('Please connect to MetaMask.');
+            } else if (accounts[0] !== currentAccount) {
+                currentAccount = accounts[0];
+                // Do any other work!
+            }
+        }
+
+        let abi = [
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "address",
+                        "name": "from",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "voucher",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "reason",
+                        "type": "string"
+                    }
+                ],
+                "name": "RegistrationError",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "address",
+                        "name": "from",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "time",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "room",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "bytes32",
+                        "name": "voucherhash",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "VoucherAdded",
+                "type": "event"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "name",
+                        "type": "string"
+                    }
+                ],
+                "name": "checkName",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "time",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "room",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "voucher",
+                        "type": "string"
+                    }
+                ],
+                "name": "registrationroom1",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "time",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "room",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "voucher",
+                        "type": "string"
+                    }
+                ],
+                "name": "registrationroom2",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "time",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "room",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "voucher",
+                        "type": "string"
+                    }
+                ],
+                "name": "registrationroom3",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "time",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "room",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "voucher",
+                        "type": "string"
+                    }
+                ],
+                "name": "registrationroom4",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "time",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "room",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "voucher",
+                        "type": "string"
+                    }
+                ],
+                "name": "registrationroom5",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "time",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "room",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "voucher",
+                        "type": "string"
+                    }
+                ],
+                "name": "registrationroom6",
+                "outputs": [],
+                "stateMutability": "payable",
+                "type": "function"
+            }
+        ];
+
+        async function loadContract() {
+            return await new window.web3.eth.Contract(abi, '0xe70a49495E3F41fb974A602BFcc951acF8D6c92B');
+        }
+
+        async function load() {
+            await loadWeb3();
+            window.contract = await loadContract();
+        }
+
+        $("#btnRegistrationRoom1").click(function () {
+            var today = new Date();
+            var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date + ' ' + time;
+            var _voucher = Date.now().toString();
+            window.contract.methods.registrationroom1(dateTime, "Classic Room", _voucher)
+                .send({ from: currentAccount, value: 1000000000000000 }, function (error, result) {
+                    if (!error) {
+                        console.error(result);
+                    } else
+                        console.error(error);
+                });
+            window.contract.once("VoucherAdded", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+                    $("#vouchertable").append("<tr>" +
+                        "<td>" + event.returnValues.time + "</td>" +
+                        "<td>" + event.returnValues.room + "</td>" +
+                        "<td>" + event.returnValues.voucherhash + "</td>" +
+                        "<td>" + event.returnValues.from + "</td>" +
+                        "</tr>");
+                }
+            })
+            window.contract.once("RegistrationError", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+                }
+            })
+        });
+
+        $("#btnRegistrationRoom2").click(function () {
+            var today = new Date();
+            var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date + ' ' + time;
+            var _voucher = Date.now().toString();
+
+            window.contract.methods.registrationroom2(dateTime, "Superieur Room", _voucher)
+                .send({ from: currentAccount, value: 2000000000000000 }, function (error, result) {
+                    if (!error) {
+                        console.error(result);
+                    } else
+                        console.error(error);
+                });
+            window.contract.once("VoucherAdded", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+                    $("#vouchertable").append("<tr>" +
+                        "<td>" + event.returnValues.time + "</td>" +
+                        "<td>" + event.returnValues.room + "</td>" +
+                        "<td>" + event.returnValues.voucherhash + "</td>" +
+                        "<td>" + event.returnValues.from + "</td>" +
+                        "</tr>");
+                }
+            })
+            window.contract.once("RegistrationError", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+                }
+            })
+        });
+
+        $("#btnRegistrationRoom3").click(function () {
+            var today = new Date();
+            var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date + ' ' + time;
+            var _voucher = Date.now().toString();
+            window.contract.methods.registrationroom3(dateTime, "Grande Room", _voucher)
+                .send({ from: currentAccount, value: 3000000000000000 }, function (error, result) {
+                    if (!error) {
+                        console.error(result);
+                    } else
+                        console.error(error);
+                });
+            window.contract.once("VoucherAdded", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+                    $("#vouchertable").append("<tr>" +
+                        "<td>" + event.returnValues.time + "</td>" +
+                        "<td>" + event.returnValues.room + "</td>" +
+                        "<td>" + event.returnValues.voucherhash + "</td>" +
+                        "<td>" + event.returnValues.from + "</td>" +
+                        "</tr>");
+                }
+            })
+            window.contract.once("RegistrationError", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+                }
+            })
+        });
+
+        $("#btnRegistrationRoom4").click(function () {
+            var today = new Date();
+            var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date + ' ' + time;
+            var _voucher = Date.now().toString();
+            window.contract.methods.registrationroom4(dateTime, "Salon Room", _voucher)
+                .send({ from: currentAccount, value: 4000000000000000 }, function (error, result) {
+                    if (!error) {
+                        console.error(result);
+                    } else
+                        console.error(error);
+                });
+            window.contract.once("VoucherAdded", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+                    $("#vouchertable").append("<tr>" +
+                        "<td>" + event.returnValues.time + "</td>" +
+                        "<td>" + event.returnValues.room + "</td>" +
+                        "<td>" + event.returnValues.voucherhash + "</td>" +
+                        "<td>" + event.returnValues.from + "</td>" +
+                        "</tr>");
+                }
+            })
+            window.contract.once("RegistrationError", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+                }
+            })
+        });
+        $("#btnRegistrationRoom5").click(function () {
+            var today = new Date();
+            var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date + ' ' + time;
+            var _voucher = Date.now().toString();
+            window.contract.methods.registrationroom5(dateTime, "Grand Double Room", _voucher)
+                .send({ from: currentAccount, value: 5000000000000000 }, function (error, result) {
+                    if (!error) {
+                        console.error(result);
+                    } else
+                        console.error(error);
+                });
+            window.contract.once("VoucherAdded", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+                    $("#vouchertable").append("<tr>" +
+                        "<td>" + event.returnValues.time + "</td>" +
+                        "<td>" + event.returnValues.room + "</td>" +
+                        "<td>" + event.returnValues.voucherhash + "</td>" +
+                        "<td>" + event.returnValues.from + "</td>" +
+                        "</tr>");
+                }
+            })
+            window.contract.once("RegistrationError", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+                }
+            })
+        });
+        $("#btnRegistrationRoom6").click(function () {
+            var today = new Date();
+            var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var dateTime = date + ' ' + time;
+            var _voucher = Date.now().toString();
+            window.contract.methods.registrationroom6(dateTime, "Family Room", _voucher)
+                .send({ from: currentAccount, value: 6000000000000000 }, function (error, result) {
+                    if (!error) {
+                        console.error(result);
+                    } else
+                        console.error(error);
+                });
+            window.contract.once("VoucherAdded", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+                    $("#vouchertable").append("<tr>" +
+                        "<td>" + event.returnValues.time + "</td>" +
+                        "<td>" + event.returnValues.room + "</td>" +
+                        "<td>" + event.returnValues.voucherhash + "</td>" +
+                        "<td>" + event.returnValues.from + "</td>" +
+                        "</tr>");
+                }
+            })
+            window.contract.once("RegistrationError", {}, function (error, event) {
+                if (!error) {
+                    console.log(event);
+
+                }
+            })
+        });
+
+        load();
+    </script>
+</body>
+
+</html>
