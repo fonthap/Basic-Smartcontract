@@ -2,6 +2,14 @@
 pragma solidity ^0.8.1;
 
 contract HotelFonthap {  
+  
+  struct Data{
+    string time;
+    string room;
+    bytes32 voucher;
+    address owner;
+  }
+  Data[] data;
 
   mapping (bytes32 => bool) private listVoucher;
 
@@ -40,6 +48,7 @@ contract HotelFonthap {
     //---check if msg.value < 0.001 ether---
     if (msg.value < 0.001 ether) {
         //---fire the event---
+        data.push(Data(time ,room ,hashing(voucher) ,msg.sender));
         emit RegistrationError(msg.sender, voucher, "Value can't less than 0.001 ether");
         //---refund back to the sender---
         payable(msg.sender).transfer(msg.value);
@@ -48,7 +57,7 @@ contract HotelFonthap {
     }
  
     recordProof(hashing(voucher));
-    
+    data.push(Data(time ,room ,hashing(voucher) ,msg.sender));
     //---fire the event---
     emit VoucherAdded(msg.sender, time, room, hashing(voucher));
     
@@ -76,7 +85,7 @@ contract HotelFonthap {
     }
  
     recordProof(hashing(voucher));
-    
+    data.push(Data(time ,room ,hashing(voucher) ,msg.sender));
     //---fire the event---
     emit VoucherAdded(msg.sender, time, room, hashing(voucher));
     
@@ -104,7 +113,7 @@ contract HotelFonthap {
     }
  
     recordProof(hashing(voucher));
-    
+    data.push(Data(time ,room ,hashing(voucher) ,msg.sender));
     //---fire the event---
     emit VoucherAdded(msg.sender, time, room, hashing(voucher));
     
@@ -132,7 +141,7 @@ contract HotelFonthap {
     }
  
     recordProof(hashing(voucher));
-    
+    data.push(Data(time ,room ,hashing(voucher) ,msg.sender));
     //---fire the event---
     emit VoucherAdded(msg.sender, time, room, hashing(voucher));
     
@@ -160,7 +169,7 @@ contract HotelFonthap {
     }
  
     recordProof(hashing(voucher));
-    
+    data.push(Data(time ,room ,hashing(voucher) ,msg.sender));
     //---fire the event---
     emit VoucherAdded(msg.sender, time, room, hashing(voucher));
     
@@ -188,6 +197,7 @@ contract HotelFonthap {
     }
  
     recordProof(hashing(voucher));
+    data.push(Data(time ,room ,hashing(voucher) ,msg.sender));
     
     //---fire the event---
     emit VoucherAdded(msg.sender, time, room, hashing(voucher));
@@ -198,7 +208,11 @@ contract HotelFonthap {
   pure returns (bytes32) {
     return sha256(bytes(name));
   }
-  
+
+  // call data
+  function getdata() public view returns(Data[] memory){
+    return data;
+  }
   // check name of student in this class
   function checkName(string memory name) public 
   view returns (bool) {
